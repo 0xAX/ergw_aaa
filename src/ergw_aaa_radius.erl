@@ -168,6 +168,7 @@ start_accounting(_From, 'Interim', Session, State = #state{acct_server = NAS, ra
 
     proc_lib:spawn_link(fun() ->
                                 ClientName = <<(State#state.nas_id)/binary, <<"_acct">>/binary>>,
+                                io:format("ClientName ~p~n", [ClientName]),
                                 eradius_client:send_request(NAS, Req, [{client_name, ClientName}])
                         end),
 
