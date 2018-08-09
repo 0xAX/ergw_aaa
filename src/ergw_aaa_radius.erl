@@ -553,6 +553,9 @@ session_options('CAPWAP-GPS-Altitude', Value, Acc) ->
 session_options('CAPWAP-GPS-Hdop', Value, Acc) ->
     [{?TP_CAPWAP_GPS_Hdop, Value} | Acc];
 
+session_options('TP-Trace-Id', Value, Acc) ->
+    [{?TP_Trace_Id, Value} | Acc];
+
 session_options(_Key, _Value, Acc) ->
     Acc.
 
